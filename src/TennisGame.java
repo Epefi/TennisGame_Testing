@@ -20,7 +20,7 @@ public class TennisGame {
 		else if (player2Points>=4 && player2Points-player1Points>=2)
 			gameEnded = true;
 	}
-	
+	 
 	private String getScore(int points) {
 		switch (points)	{
 		case 0: return "love";
@@ -28,6 +28,7 @@ public class TennisGame {
 		case 2: return "30" ;
 		case 3: return "40";
 		default: return "40" ;
+		
 		} 		
 	}
 	
@@ -77,14 +78,20 @@ public class TennisGame {
 					return "player2 wins";
 			}
 			
-			if (player1Points >= 4 && player1Points == player2Points)
+			if (player1Points >= 4 && player1Points == player2Points) {
+				
 				return "deuce";
+			}
 			
-			if (player1Points >= 4 && player1Points - player2Points == 1)
+			else if (player1Points >= 4 && player1Points - player2Points == 1) {
+				
 				return "player1 has advantage";
+			}
 			
-			if (player2Points > 4 && player2Points - player1Points == 1)
+			else if (player2Points > 4 && player2Points - player1Points == 1) {
+				
 				return "player2 has advantage";							
+			}else
 			
 			return  player2Score + " - " + player1Score ;
 	}
